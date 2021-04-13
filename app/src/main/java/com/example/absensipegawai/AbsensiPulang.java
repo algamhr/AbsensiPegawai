@@ -35,19 +35,12 @@ public class AbsensiPulang extends AppCompatActivity implements NavigationView.O
 
     //Untuk panggil Repository
     private ApiRepository apiRepository;
+    SharedPreferences sharedPreferences;
 
     //Untuk lokasi
-    LocationRequest locationRequest;
-    SharedPreferences sharedPreferences;
     Location gps_loc, network_loc, final_loc;
     double longitude;
     double latitude;
-    Location location;
-    Context context;
-    LocationManager locationManager;
-
-    private static final long INTERVAL = 1000 * 10;
-    private static final long FASTEST_INTERVAL = 1000 * 5;
 
     //Untuk string yang dibutuhkan
     String userNip;
@@ -129,8 +122,6 @@ public class AbsensiPulang extends AppCompatActivity implements NavigationView.O
                 } else {
                     ActivityCompat.requestPermissions(AbsensiPulang.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_NETWORK_STATE}, 1);
                 }
-
-                //        button.setText(userNip);
             }
         });
     }

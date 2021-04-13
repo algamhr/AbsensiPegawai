@@ -29,22 +29,16 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
 
     //Untuk panggil Repository
     private ApiRepository apiRepository;
+    SharedPreferences sharedPreferences;
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
 
-    SharedPreferences sharedPreferences;
-
-    String userNip;
-    String user_id;
-    String nip, nidn, nama, email, jurusan, fakultas, no_hp;
-
+    String userNip, user_id;
     private Button button;
 
     TextInputLayout nipUser, nidnUser, namaUser, emailUser, jurusanUser, fakultasUser, no_hpUser;
-
-    // EditText nipUser, nidnUser, namaUser, emailUser, jurusanUser, fakultasUser, no_hpUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

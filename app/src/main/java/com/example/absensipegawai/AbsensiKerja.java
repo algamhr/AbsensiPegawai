@@ -35,14 +35,14 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
 
     //Untuk panggil Repository
     private ApiRepository apiRepository;
-
     SharedPreferences sharedPreferences;
+
+
+    //Untuk lokasi
     Location gps_loc, network_loc, final_loc;
     double longitude;
     double latitude;
 
-    private static final long INTERVAL = 1000 * 10;
-    private static final long FASTEST_INTERVAL = 1000 * 5;
 
     private Notification notification;
 
@@ -126,8 +126,6 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
                 } else {
                     ActivityCompat.requestPermissions(AbsensiKerja.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_NETWORK_STATE}, 1);
                 }
-
-                //        button.setText(userNip);
             }
         });
     }

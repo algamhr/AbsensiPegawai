@@ -54,19 +54,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     //Untuk panggil Repository
     private ApiRepository apiRepository;
+    SharedPreferences sharedPreferences;
 
     //Untuk lokasi
-    LocationRequest locationRequest;
-    SharedPreferences sharedPreferences;
     Location gps_loc, network_loc, final_loc;
     double longitude;
     double latitude;
-    Location location;
-    Context context;
-    LocationManager locationManager;
-
-    private static final long INTERVAL = 1000 * 10;
-    private static final long FASTEST_INTERVAL = 1000 * 5;
 
     private Notification notification;
 
@@ -112,13 +105,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             hideMenuItemAtasan();
         }
 
-//        public void createLocationRequest() {
-//            locationRequest = new LocationRequest();
-//            locationRequest.setInterval(INTERVAL);
-//            locationRequest.setFastestInterval(FASTEST_INTERVAL);
-//            locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-//        }
-
         final LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         button = findViewById(R.id.btnmasuk);
@@ -161,8 +147,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 } else {
                     ActivityCompat.requestPermissions(HomeActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_NETWORK_STATE}, 1);
                 }
-
-                //        button.setText(userNip);
             }
         });
 

@@ -62,15 +62,17 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        apiRepository  = new ApiRepository();
+
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         fcmToken = sharedpreferences.getString("fcm_token", null);
 
-        final EditText nipusr = findViewById(R.id.loginusername);
-        final EditText passusr = findViewById(R.id.loginpassword);
+        nipusr = findViewById(R.id.loginusername);
+        passusr = findViewById(R.id.loginpassword);
+        btnlogin = findViewById(R.id.btnlogin);
 
-        Button btnlogin = findViewById(R.id.btnlogin);
 
-        apiRepository  = new ApiRepository();
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
