@@ -25,20 +25,23 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:minHeight="?attr/actionBarSize"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/menu_icon"
-            app:titleTextColor="@android:color/white" />
+            app:titleTextColor="@color/transparent" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/home_notification"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="350dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -59,31 +62,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <ImageView
+            android:id="@+id/verifikasimasuk"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="132dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/checked"
+            app:layout_constraintTop_toBottomOf="@+id/absensimasuk2" />
 
-            <ImageView
-                android:id="@+id/verifikasimasuk"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="350dp"
-                android:src="@drawable/checked" />
-
-            <TextView
-                android:id="@+id/absenmasukver"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:text="@string/absenmasukverified"
-                android:textAlignment="center"
-                android:textColor="@color/colorGrey"
-                android:textSize="20sp" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/absenkerjaver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textAlignment="center"
+            android:text="@string/absenmasukverified"
+            android:textColor="@color/colorGrey"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verifikasimasuk" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
