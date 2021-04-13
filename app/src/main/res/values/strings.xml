@@ -29,7 +29,7 @@
     //Sudah melakukan absensi
     <string name="absenmasukverified">Saya telah melakukan Absensi Masuk.</string>
     <string name="absenkerjaverified">Absensi Kerja berhasil.</string>
-    <string name="absenkeluarverified">Saya telah melakukan \n Absensi Pulang.</string>
+    <string name="absenkeluarverified">Saya telah melakukan Absensi Pulang.</string>
 
     //Verifikasi
     <string name="verifikasi">Verifikasi</string>
