@@ -79,7 +79,22 @@ public class ChangePasswordActivity extends AppCompatActivity implements Navigat
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(passwordUser.getEditText().getText().toString().equals(confirmUser.getEditText().getText().toString())){
+                if(passwordUser.equals("")){
+                    new KAlertDialog(ChangePasswordActivity.this, KAlertDialog.ERROR_TYPE)
+                            .setTitleText("Gagal!")
+                            .setContentText("Silahkan isi Password Baru Anda.")
+                            .show();
+                } else if(confirmUser.equals("")){
+                    new KAlertDialog(ChangePasswordActivity.this, KAlertDialog.ERROR_TYPE)
+                            .setTitleText("Gagal!")
+                            .setContentText("Silahkan isi Password Konfirmasi.")
+                            .show();
+                } else if(passwordUser.equals("") && confirmUser.equals("")){
+                    new KAlertDialog(ChangePasswordActivity.this, KAlertDialog.ERROR_TYPE)
+                            .setTitleText("Gagal!")
+                            .setContentText("Silahkan isi Password & Konfirmasi Password.")
+                            .show();
+                } else if(passwordUser.getEditText().getText().toString().equals(confirmUser.getEditText().getText().toString())){
                     doupdatepassword(user_id,
                             oldpasswordUser.getEditText().getText().toString(),
                             passwordUser.getEditText().getText().toString());
