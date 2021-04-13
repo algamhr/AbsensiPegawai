@@ -38,9 +38,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:textColorHint="@color/colorWhite"
         app:hintTextColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +53,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginusername"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/colorWhite"
             android:drawablePadding="8dp"
@@ -64,9 +66,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:textColorHint="@color/colorWhite"
         app:hintTextColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,9 +95,11 @@
 
     <Button
         android:id="@+id/btnlogin"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:background="@drawable/btn_login"
         android:fontFamily="@font/segoeui"
         android:text="@string/loginbtn"
