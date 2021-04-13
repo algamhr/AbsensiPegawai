@@ -38,9 +38,11 @@
 
     <Button
         android:id="@+id/btnselamatdatang"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:background="@drawable/btn_welcome"
         android:fontFamily="@font/segoeui"
         android:text="@string/mulai"
