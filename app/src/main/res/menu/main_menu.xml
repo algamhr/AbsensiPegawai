@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/menu">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_absenmasuk"
+                    android:icon="@drawable/absensimasuk_icon"
+                    android:title="@string/absenmasuk" />
+
+                <item
+                    android:id="@+id/nav_absenkerja"
+                    android:icon="@drawable/absensikerja_icon"
+                    android:title="@string/absenkerja" />
+
+                <item
+                    android:id="@+id/nav_absenpulang"
+                    android:icon="@drawable/absensipulang_icon"
+                    android:title="@string/absenkeluar" />
+
+                <item
+                    android:id="@+id/nav_listpegawai"
+                    android:icon="@drawable/list_icon"
+                    android:title="@string/list_pegawai" />
+
+            </group>
+
+        </menu>
+
+    </item>
+
+    <item android:title="@string/profile">
+
+        <menu>
+
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/profile_icon"
+                    android:title="@string/profile" />
+
+                <item
+                    android:id="@+id/nav_setting"
+                    android:icon="@drawable/setting_icon"
+                    android:title="@string/gantipassword" />
+
+                <item
+                    android:id="@+id/nav_off"
+                    android:icon="@drawable/off_icon"
+                    android:title="@string/logout" />
+
+            </group>
+
+        </menu>
+
+    </item>
+
+</menu>

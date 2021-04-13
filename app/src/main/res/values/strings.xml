@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Absensi Pegawai</string>
+    <string name="welcome">SELAMAT DATANG</string>
+
+    <string name="term">Dengan memulai Anda setuju dengan syarat &amp; ketentuan layanan</string>
+    <string name="judul">Absensi Pegawai</string>
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    //Menu
+    <string name="menu">Menu</string>
+    <string name="absenmasuk">Absensi Masuk</string>
+    <string name="absenkerja">Absensi Kerja</string>
+    <string name="absenkeluar">Absensi Pulang</string>
+    <string name="profile">Profil</string>
+    <string name="gantipassword">Ganti Password</string>
+    <string name="logout">Keluar</string>
+
+    //Sudah melakukan absensi
+    <string name="absenmasukverified">Saya telah melakukan Absensi Masuk.</string>
+    <string name="absenkerjaverified">Absensi Kerja berhasil.</string>
+    <string name="absenkeluarverified">Saya telah melakukan \n Absensi Pulang.</string>
+
+    //Verifikasi
+    <string name="verifikasi">Verifikasi</string>
+
+    //Profil
+    <string name="nipnidn">NIP/NIDN</string>
+    <string name="nip">NIP</string>
+    <string name="nidn">NIDN</string>
+    <string name="nama">Nama</string>
+    <string name="email">E-mail</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="laki">Laki-laki</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="jurusan">Jurusan</string>
+    <string name="fakultas">Fakultas</string>
+    <string name="no_hp">No HP</string>
+
+    //Ganti password
+    <string name="oldpass">Password Lama</string>
+    <string name="newpass">Password Baru</string>
+    <string name="confirmpass">Konfirmasi Password</string>
+
+    //Button
+    <string name="loginbtn">Login</string>
+    <string name="sign_in">Masuk</string>
+    <string name="pulangbtn">Pulang</string>
+    <string name="updatebtn">Update</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="list_pegawai">List Pegawai</string>
+    <string name="setuju">Setuju</string>
+    <string name="term1">Dengan memulai aplikasi, Anda setuju dengan</string>
+    <string name="term2"><![CDATA[syarat & ketentuan layanan]]></string>
+    <string name="string_term2" />
+    <string name="todo">TODO</string>
+    <string name="absensi_pegawai">ABSENSI PEGAWAI</string>
+    <string name="password">Password</string>
+    <string name="mulai">Mulai</string>
+    <string name="password_lama">Password Lama</string>
+    <string name="password_baru">Password Baru</string>
+    <string name="konfirmasi_password">Konfirmasi Password</string>
+    <string name="ganti">Ganti</string>
+    <string name="keterangan">Ket</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="tanggal_jam">tanggal_jam</string>
+    <string name="absen_kerja">Absen Kerja</string>
+    <string name="default_notification_channel_id">new_token_absen_kerja</string>
+</resources>

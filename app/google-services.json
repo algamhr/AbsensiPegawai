@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "382742459541",
+    "project_id": "absensi-pegawai-umrah",
+    "storage_bucket": "absensi-pegawai-umrah.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382742459541:android:96306892ce0a15a266d79c",
+        "android_client_info": {
+          "package_name": "com.example.absensipegawai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382742459541-c8re47tdgtafc1c9657epglgkf0sf0k0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.absensipegawai",
+            "certificate_hash": "645ad89d43eb08a8049853c86b01fd3cdc2e2fc6"
+          }
+        },
+        {
+          "client_id": "382742459541-098kud2431180o3c2s54lc2d0d3bge4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxluH-GYYZ8jnIvYHiMIiHJyBnTPYh0IQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382742459541-098kud2431180o3c2s54lc2d0d3bge4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity"
+    tools:openDrawer="start">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/menu_icon"
+            app:titleTextColor="@color/transparent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/home_notification"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="320dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/notification_icon" />
+
+        <TextView
+            android:id="@+id/profile"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/segoeui"
+            android:text="@string/profile"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/niptextinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile"
+            app:passwordToggleTint="@color/colorGrey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nipuser"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorWhite"
+                android:drawablePadding="8dp"
+                android:hint="@string/nip"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="20"
+                android:textColor="@color/colorWhite" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nidntextinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/niptextinput"
+            app:passwordToggleTint="@color/colorGrey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nidnuser"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorWhite"
+                android:drawablePadding="8dp"
+                android:hint="@string/nidn"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="20"
+                android:textColor="@color/colorWhite" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/namatexinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nidntextinput"
+            app:passwordToggleTint="@color/colorGrey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/namauser"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorWhite"
+                android:drawablePadding="8dp"
+                android:hint="@string/nama"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:maxLength="50"
+                android:textColor="@color/colorWhite" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailtexinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namatexinput"
+            app:passwordToggleTint="@color/colorGrey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailuser"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorWhite"
+                android:drawablePadding="8dp"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:maxLength="50"
+                android:textColor="@color/colorWhite" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fakultastexinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailtexinput"
+            app:passwordToggleTint="@color/colorGrey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fakultasuser"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorWhite"
+                android:drawablePadding="8dp"
+                android:hint="@string/fakultas"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="100"
+                android:textColor="@color/colorWhite" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/jurusantexinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fakultastexinput"
+            app:passwordToggleTint="@color/colorGrey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/jurusanuser"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorWhite"
+                android:drawablePadding="8dp"
+                android:hint="@string/jurusan"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="50"
+                android:textColor="@color/colorWhite" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/no_hptextinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColorHint="@color/colorWhite"
+            app:hintTextColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jurusantexinput"
+            app:passwordToggleTint="@color/colorGrey">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/no_hpuser"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorWhite"
+                android:drawablePadding="8dp"
+                android:hint="@string/no_hp"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="17"
+                android:textColor="@color/colorWhite" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        <EditText-->
+<!--            android:id="@+id/nipuser"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="number"-->
+<!--            android:maxLength="20"-->
+<!--            android:hint="@string/nip"-->
+<!--            android:textColorHint="@color/colorGrey"-->
+<!--            android:fontFamily="@font/segoeui"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:backgroundTint="@color/colorWhite"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/profile"-->
+<!--            android:autofillHints="" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/nidnuser"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:backgroundTint="@color/colorWhite"-->
+<!--            android:ems="10"-->
+<!--            android:maxLength="16"-->
+<!--            android:fontFamily="@font/segoeui"-->
+<!--            android:inputType="number"-->
+<!--            android:hint="@string/nidn"-->
+<!--            android:textColorHint="@color/colorGrey"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/nipuser"-->
+<!--            android:autofillHints="" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/namauser"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:maxLength="100"-->
+<!--            android:hint="@string/nama"-->
+<!--            android:textColorHint="@color/colorGrey"-->
+<!--            android:fontFamily="@font/segoeui"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:backgroundTint="@color/colorWhite"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/nidnuser"-->
+<!--            android:autofillHints="" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/emailuser"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="textEmailAddress"-->
+<!--            android:hint="@string/email"-->
+<!--            android:textColorHint="@color/colorGrey"-->
+<!--            android:fontFamily="@font/segoeui"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:backgroundTint="@color/colorWhite"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/namauser"-->
+<!--            android:autofillHints="" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/jurusanuser"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="text"-->
+<!--            android:hint="@string/jurusan"-->
+<!--            android:textColorHint="@color/colorGrey"-->
+<!--            android:fontFamily="@font/segoeui"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:backgroundTint="@color/colorWhite"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/emailuser"-->
+<!--            android:autofillHints="" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/fakultasuser"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="text"-->
+<!--            android:hint="@string/fakultas"-->
+<!--            android:textColorHint="@color/colorGrey"-->
+<!--            android:fontFamily="@font/segoeui"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:backgroundTint="@color/colorWhite"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/jurusanuser"-->
+<!--            android:autofillHints="" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/no_hpuser"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="phone"-->
+<!--            android:maxLength="16"-->
+<!--            android:hint="@string/no_hp"-->
+<!--            android:textColorHint="@color/colorGrey"-->
+<!--            android:fontFamily="@font/segoeui"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:backgroundTint="@color/colorWhite"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/fakultasuser"-->
+<!--            android:autofillHints="" />-->
+
+        <Button
+            android:id="@+id/btnupdateuser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="52dp"
+            android:background="@drawable/btn_login"
+            android:fontFamily="@font/segoeui"
+            android:text="@string/updatebtn"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/no_hptextinput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
