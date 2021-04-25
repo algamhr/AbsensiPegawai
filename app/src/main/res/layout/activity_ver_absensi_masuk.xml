@@ -36,17 +36,6 @@
             app:navigationIcon="@drawable/menu_icon"
             app:titleTextColor="@color/transparent" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/home_notification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="320dp"
-            android:layout_marginTop="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/notification_icon" />
-
         <TextView
             android:id="@+id/absensimasuk2"
             android:layout_width="200dp"
