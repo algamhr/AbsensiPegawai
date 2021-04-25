@@ -21,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.developer.kalert.KAlertDialog;
@@ -43,11 +44,11 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
     double longitude;
     double latitude;
 
-
     private Notification notification;
 
     private Button button;
     String userNip, user_id, tokenAbsen;
+    TextView tokentext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
         String level = sharedPreferences.getString("level", null);
         user_id = sharedPreferences.getString("user_id", null);
         tokenAbsen = sharedPreferences.getString("token_absen", null);
+
 
         drawerLayout = findViewById(R.id.drawer_layout2);
         navigationView = findViewById(R.id.nav_view);
@@ -86,6 +88,9 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
         }
 
         final LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        tokentext = findViewById(R.id.tokentext);
+        tokentext.setText(tokenAbsen);
 
         button = findViewById(R.id.btnkerja);
         button.setOnClickListener(new View.OnClickListener() {

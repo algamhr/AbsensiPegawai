@@ -108,7 +108,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         final LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         button = findViewById(R.id.btnmasuk);
-        button.setText(tokenAbsen);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

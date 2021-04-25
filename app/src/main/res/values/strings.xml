@@ -77,4 +77,6 @@
     <string name="tanggal_jam">tanggal_jam</string>
     <string name="absen_kerja">Absen Kerja</string>
     <string name="default_notification_channel_id">new_token_absen_kerja</string>
+    <string name="token">Token</string>
+    <string name="token_saat_ini">Token saat ini :</string>
 </resources>
