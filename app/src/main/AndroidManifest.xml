@@ -15,14 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ListPegawai"></activity>
+        <activity android:name=".ListPegawaiActivity"></activity>
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".VerAbsensiPulang" />
         <activity android:name=".VerAbsensiKerja" />
         <activity android:name=".VerAbsensiMasuk" />
-        <activity android:name=".AbsensiPulang" />
-        <activity android:name=".AbsensiKerja" />
+        <activity android:name=".AbsensiPulangActivity" />
+        <activity android:name=".AbsensiKerjaActivity" />
         <activity
             android:name=".HomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

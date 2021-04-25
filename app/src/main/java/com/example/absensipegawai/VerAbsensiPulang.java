@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.absensipegawai.webservice.ApiRepository;
 import com.google.android.material.navigation.NavigationView;
 
 public class VerAbsensiPulang extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -95,7 +96,7 @@ public class VerAbsensiPulang extends AppCompatActivity implements NavigationVie
             case R.id.nav_absenpulang:
                 break;
             case R.id.nav_listpegawai:
-                Intent intent3 = new Intent(VerAbsensiPulang.this, ListPegawai.class);
+                Intent intent3 = new Intent(VerAbsensiPulang.this, ListPegawaiActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_profile:

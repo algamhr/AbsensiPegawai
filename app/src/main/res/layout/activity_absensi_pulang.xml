@@ -8,7 +8,7 @@
     android:background="@drawable/bghome"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".AbsensiPulang"
+    tools:context=".AbsensiPulangActivity"
     tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView

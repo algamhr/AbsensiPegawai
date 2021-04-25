@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.absensipegawai.webservice.ApiRepository;
 import com.google.android.material.navigation.NavigationView;
 
 public class VerAbsensiMasuk extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -87,15 +88,15 @@ public class VerAbsensiMasuk extends AppCompatActivity implements NavigationView
             case R.id.nav_absenmasuk:
                 break;
             case R.id.nav_absenkerja:
-                Intent intent = new Intent(VerAbsensiMasuk.this, AbsensiKerja.class);
+                Intent intent = new Intent(VerAbsensiMasuk.this, AbsensiKerjaActivity.class);
                 startActivity(intent);
                 break;
             case R.id.nav_absenpulang:
-                Intent intent2 = new Intent(VerAbsensiMasuk.this, AbsensiPulang.class);
+                Intent intent2 = new Intent(VerAbsensiMasuk.this, AbsensiPulangActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.nav_listpegawai:
-                Intent intent3 = new Intent(VerAbsensiMasuk.this, ListPegawai.class);
+                Intent intent3 = new Intent(VerAbsensiMasuk.this, ListPegawaiActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_profile:

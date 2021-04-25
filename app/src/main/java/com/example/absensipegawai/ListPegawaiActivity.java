@@ -19,13 +19,16 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.developer.kalert.KAlertDialog;
+import com.example.absensipegawai.adapter.CustomAdapter;
 import com.example.absensipegawai.pojo.DataListPegawai;
 import com.example.absensipegawai.pojo.ListPegawaiResponse;
+import com.example.absensipegawai.webservice.ApiRepository;
+import com.example.absensipegawai.webservice.ApiRepositoryCallBack;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class ListPegawai extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ListPegawaiActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //buat list pegawai
     RecyclerView recyclerView;
@@ -103,7 +106,7 @@ public class ListPegawai extends AppCompatActivity implements NavigationView.OnN
                     customAdapter.setData(dataListPegawai);
                     recyclerView.setAdapter(customAdapter);
                 } else {
-                    new KAlertDialog(ListPegawai.this, KAlertDialog.SUCCESS_TYPE)
+                    new KAlertDialog(ListPegawaiActivity.this, KAlertDialog.SUCCESS_TYPE)
                             .setTitleText("Gagal!")
                             .setContentText(response.getMessage())
                             .show();
@@ -112,7 +115,7 @@ public class ListPegawai extends AppCompatActivity implements NavigationView.OnN
 
             @Override
             public void onGetError() {
-                new KAlertDialog(ListPegawai.this, KAlertDialog.ERROR_TYPE)
+                new KAlertDialog(ListPegawaiActivity.this, KAlertDialog.ERROR_TYPE)
                         .setTitleText("Gagal!")
                         .setContentText("Tidak Terhubung ke server.")
                         .show();
@@ -129,25 +132,25 @@ public class ListPegawai extends AppCompatActivity implements NavigationView.OnN
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_absenmasuk:
-                Intent intent = new Intent(ListPegawai.this, HomeActivity.class);
+                Intent intent = new Intent(ListPegawaiActivity.this, HomeActivity.class);
                 startActivity(intent);
                 break;
             case R.id.nav_absenkerja:
-                Intent intent2 = new Intent(ListPegawai.this, AbsensiKerja.class);
+                Intent intent2 = new Intent(ListPegawaiActivity.this, AbsensiKerjaActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.nav_absenpulang:
-                Intent intent3 = new Intent(ListPegawai.this, AbsensiPulang.class);
+                Intent intent3 = new Intent(ListPegawaiActivity.this, AbsensiPulangActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_listpegawai:
                 break;
             case R.id.nav_profile:
-                Intent intent4 = new Intent(ListPegawai.this, ProfileActivity.class);
+                Intent intent4 = new Intent(ListPegawaiActivity.this, ProfileActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.nav_setting:
-                Intent intent5 = new Intent(ListPegawai.this, ChangePasswordActivity.class);
+                Intent intent5 = new Intent(ListPegawaiActivity.this, ChangePasswordActivity.class);
                 startActivity(intent5);
                 break;
             case R.id.nav_off:
@@ -167,6 +170,6 @@ public class ListPegawai extends AppCompatActivity implements NavigationView.OnN
         String keluar = "Anda telah keluar";
         intent6.putExtra("user_logout", keluar);
         startActivity(intent6);
-        Toast.makeText(ListPegawai.this, "Anda telah keluar", Toast.LENGTH_SHORT).show();
+        Toast.makeText(ListPegawaiActivity.this, "Anda telah keluar", Toast.LENGTH_SHORT).show();
     }
 }

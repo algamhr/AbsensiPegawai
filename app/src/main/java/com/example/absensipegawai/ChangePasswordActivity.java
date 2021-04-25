@@ -18,6 +18,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.developer.kalert.KAlertDialog;
+import com.example.absensipegawai.pojo.UpdatePasswordResponse;
+import com.example.absensipegawai.webservice.ApiRepository;
+import com.example.absensipegawai.webservice.ApiRepositoryCallBack;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -131,15 +134,15 @@ public class ChangePasswordActivity extends AppCompatActivity implements Navigat
                 startActivity(intent);
                 break;
             case R.id.nav_absenkerja:
-                Intent intent2 = new Intent(ChangePasswordActivity.this, AbsensiKerja.class);
+                Intent intent2 = new Intent(ChangePasswordActivity.this, AbsensiKerjaActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.nav_absenpulang:
-                Intent intent3 = new Intent(ChangePasswordActivity.this, AbsensiPulang.class);
+                Intent intent3 = new Intent(ChangePasswordActivity.this, AbsensiPulangActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_listpegawai:
-                Intent intent4 = new Intent(ChangePasswordActivity.this, ListPegawai.class);
+                Intent intent4 = new Intent(ChangePasswordActivity.this, ListPegawaiActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.nav_profile:

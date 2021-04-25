@@ -5,7 +5,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -15,35 +14,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.developer.kalert.KAlertDialog;
-import com.google.android.gms.common.api.ResolvableApiException;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.LocationSettingsRequest;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.absensipegawai.pojo.PostResponse;
+import com.example.absensipegawai.webservice.ApiRepository;
+import com.example.absensipegawai.webservice.ApiRepositoryCallBack;
 import com.google.android.material.navigation.NavigationView;
-
-import java.security.Provider;
-import java.text.BreakIterator;
-import java.util.List;
-import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -203,15 +188,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_absenmasuk:
                 break;
             case R.id.nav_absenkerja:
-                Intent intent = new Intent(HomeActivity.this, AbsensiKerja.class);
+                Intent intent = new Intent(HomeActivity.this, AbsensiKerjaActivity.class);
                 startActivity(intent);
                 break;
             case R.id.nav_absenpulang:
-                Intent intent2 = new Intent(HomeActivity.this, AbsensiPulang.class);
+                Intent intent2 = new Intent(HomeActivity.this, AbsensiPulangActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.nav_listpegawai:
-                Intent intent3 = new Intent(HomeActivity.this, ListPegawai.class);
+                Intent intent3 = new Intent(HomeActivity.this, ListPegawaiActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_profile:

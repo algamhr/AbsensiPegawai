@@ -1,4 +1,4 @@
-package com.example.absensipegawai;
+package com.example.absensipegawai.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,10 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.absensipegawai.R;
 import com.example.absensipegawai.pojo.DataListPegawai;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 

@@ -1,4 +1,4 @@
-package com.example.absensipegawai;
+package com.example.absensipegawai.pojo;
 
 import com.google.gson.annotations.SerializedName;
 

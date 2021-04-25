@@ -16,13 +16,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.developer.kalert.KAlertDialog;
+import com.example.absensipegawai.pojo.ProfileResponse;
+import com.example.absensipegawai.pojo.UpdateUserResponse;
+import com.example.absensipegawai.webservice.ApiRepository;
+import com.example.absensipegawai.webservice.ApiRepositoryCallBack;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class ProfileActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -142,15 +143,15 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
                 startActivity(intent);
                 break;
             case R.id.nav_absenkerja:
-                Intent intent2 = new Intent(ProfileActivity.this, AbsensiKerja.class);
+                Intent intent2 = new Intent(ProfileActivity.this, AbsensiKerjaActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.nav_absenpulang:
-                Intent intent3 = new Intent(ProfileActivity.this, AbsensiPulang.class);
+                Intent intent3 = new Intent(ProfileActivity.this, AbsensiPulangActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_listpegawai:
-                Intent intent4 = new Intent(ProfileActivity.this, ListPegawai.class);
+                Intent intent4 = new Intent(ProfileActivity.this, ListPegawaiActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.nav_profile:

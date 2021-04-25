@@ -1,4 +1,4 @@
-package com.example.absensipegawai;
+package com.example.absensipegawai.webservice;
 
 public interface ApiRepositoryCallBack<T> {
     void onGetResponse (T response);

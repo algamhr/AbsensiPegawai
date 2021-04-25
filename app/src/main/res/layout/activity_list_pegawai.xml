@@ -8,7 +8,7 @@
     android:background="@drawable/grad_bg"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    tools:context=".ListPegawai"
+    tools:context=".ListPegawaiActivity"
     tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView

@@ -1,4 +1,4 @@
-package com.example.absensipegawai;
+package com.example.absensipegawai.webservice.client;
 
 import java.security.cert.CertificateException;
 

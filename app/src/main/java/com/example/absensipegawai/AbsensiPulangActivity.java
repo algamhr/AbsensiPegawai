@@ -22,10 +22,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.location.LocationRequest;
+import com.example.absensipegawai.pojo.PostResponse;
+import com.example.absensipegawai.webservice.ApiRepository;
+import com.example.absensipegawai.webservice.ApiRepositoryCallBack;
 import com.google.android.material.navigation.NavigationView;
 
-public class AbsensiPulang extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class AbsensiPulangActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -87,9 +89,9 @@ public class AbsensiPulang extends AppCompatActivity implements NavigationView.O
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ActivityCompat.checkSelfPermission(AbsensiPulang.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                        && ActivityCompat.checkSelfPermission(AbsensiPulang.this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                        && ActivityCompat.checkSelfPermission(AbsensiPulang.this, Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(AbsensiPulangActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                        && ActivityCompat.checkSelfPermission(AbsensiPulangActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                        && ActivityCompat.checkSelfPermission(AbsensiPulangActivity.this, Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED) {
                     try {
                         gps_loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                         network_loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -111,16 +113,16 @@ public class AbsensiPulang extends AppCompatActivity implements NavigationView.O
                     else {
                         latitude = 0.0;
                         longitude = 0.0;
-                        Toast.makeText(AbsensiPulang.this, "Koneksi Anda tidak terhubung. \n" + latitude + " " + longitude, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AbsensiPulangActivity.this, "Koneksi Anda tidak terhubung. \n" + latitude + " " + longitude, Toast.LENGTH_SHORT).show();
                     }
                     if (latitude != 0.0 && longitude != 0.0){
-                        Toast.makeText(AbsensiPulang.this, "Cek lokasi berhasil." + latitude + " " + longitude, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AbsensiPulangActivity.this, "Cek lokasi berhasil." + latitude + " " + longitude, Toast.LENGTH_SHORT).show();
                         dopulang(user_id, latitude, longitude);
                     }
                     return;
 
                 } else {
-                    ActivityCompat.requestPermissions(AbsensiPulang.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_NETWORK_STATE}, 1);
+                    ActivityCompat.requestPermissions(AbsensiPulangActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_NETWORK_STATE}, 1);
                 }
             }
         });
@@ -136,16 +138,16 @@ public class AbsensiPulang extends AppCompatActivity implements NavigationView.O
             @Override
             public void onGetResponse(PostResponse response) {
                 if (response.getStatus() == true) {
-                    Toast.makeText(AbsensiPulang.this, response.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AbsensiPulangActivity.this, response.getMessage(), Toast.LENGTH_SHORT).show();
                     VerAbsensiPulang();
                 } else {
-                    Toast.makeText(AbsensiPulang.this, response.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AbsensiPulangActivity.this, response.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onGetError() {
-                Toast.makeText(AbsensiPulang.this, "Tidak Terhubung ke Server.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AbsensiPulangActivity.this, "Tidak Terhubung ke Server.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -170,25 +172,25 @@ public class AbsensiPulang extends AppCompatActivity implements NavigationView.O
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_absenmasuk:
-                Intent intent = new Intent(AbsensiPulang.this, HomeActivity.class);
+                Intent intent = new Intent(AbsensiPulangActivity.this, HomeActivity.class);
                 startActivity(intent);
                 break;
             case R.id.nav_absenkerja:
-                Intent intent2 = new Intent(AbsensiPulang.this, VerAbsensiKerja.class);
+                Intent intent2 = new Intent(AbsensiPulangActivity.this, VerAbsensiKerja.class);
                 startActivity(intent2);
                 break;
             case R.id.nav_absenpulang:
                 break;
             case R.id.nav_listpegawai:
-                Intent intent3 = new Intent(AbsensiPulang.this, ListPegawai.class);
+                Intent intent3 = new Intent(AbsensiPulangActivity.this, ListPegawaiActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_profile:
-                Intent intent4 = new Intent(AbsensiPulang.this, ProfileActivity.class);
+                Intent intent4 = new Intent(AbsensiPulangActivity.this, ProfileActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.nav_setting:
-                Intent intent5 = new Intent(AbsensiPulang.this, ChangePasswordActivity.class);
+                Intent intent5 = new Intent(AbsensiPulangActivity.this, ChangePasswordActivity.class);
                 startActivity(intent5);
                 break;
             case R.id.nav_off:
@@ -209,6 +211,6 @@ public class AbsensiPulang extends AppCompatActivity implements NavigationView.O
         String keluar = "Anda telah Keluar";
         intent6.putExtra("user_logout", keluar);
         startActivity(intent6);
-        Toast.makeText(AbsensiPulang.this, "Anda telah Keluar", Toast.LENGTH_SHORT).show();
+        Toast.makeText(AbsensiPulangActivity.this, "Anda telah Keluar", Toast.LENGTH_SHORT).show();
     }
 }

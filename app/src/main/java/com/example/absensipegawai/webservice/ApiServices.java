@@ -1,6 +1,11 @@
-package com.example.absensipegawai;
+package com.example.absensipegawai.webservice;
 
 import com.example.absensipegawai.pojo.ListPegawaiResponse;
+import com.example.absensipegawai.pojo.LoginResponse;
+import com.example.absensipegawai.pojo.PostResponse;
+import com.example.absensipegawai.pojo.ProfileResponse;
+import com.example.absensipegawai.pojo.UpdatePasswordResponse;
+import com.example.absensipegawai.pojo.UpdateUserResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;

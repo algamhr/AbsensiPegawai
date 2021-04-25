@@ -25,9 +25,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.developer.kalert.KAlertDialog;
+import com.example.absensipegawai.pojo.PostResponse;
+import com.example.absensipegawai.webservice.ApiRepository;
+import com.example.absensipegawai.webservice.ApiRepositoryCallBack;
 import com.google.android.material.navigation.NavigationView;
 
-public class AbsensiKerja extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class AbsensiKerjaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //Variables
     DrawerLayout drawerLayout;
@@ -96,9 +99,9 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ActivityCompat.checkSelfPermission(AbsensiKerja.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                        && ActivityCompat.checkSelfPermission(AbsensiKerja.this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                        && ActivityCompat.checkSelfPermission(AbsensiKerja.this, Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(AbsensiKerjaActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                        && ActivityCompat.checkSelfPermission(AbsensiKerjaActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                        && ActivityCompat.checkSelfPermission(AbsensiKerjaActivity.this, Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED) {
                     try {
                         gps_loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                         network_loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -120,23 +123,23 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
                     else {
                         latitude = 0.0;
                         longitude = 0.0;
-                        Toast.makeText(AbsensiKerja.this, "Koneksi Anda tidak terhubung atau GPS anda Mati. " + latitude + " " + longitude, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AbsensiKerjaActivity.this, "Koneksi Anda tidak terhubung atau GPS anda Mati. " + latitude + " " + longitude, Toast.LENGTH_SHORT).show();
                     }
                     if (latitude != 0.0 && longitude != 0.0){
-                        Toast.makeText(AbsensiKerja.this, "Cek lokasi berhasil \n" + latitude + " " + longitude, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AbsensiKerjaActivity.this, "Cek lokasi berhasil \n" + latitude + " " + longitude, Toast.LENGTH_SHORT).show();
                         dokerja(user_id, latitude, longitude, tokenAbsen);
                     }
                     return;
 
                 } else {
-                    ActivityCompat.requestPermissions(AbsensiKerja.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_NETWORK_STATE}, 1);
+                    ActivityCompat.requestPermissions(AbsensiKerjaActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_NETWORK_STATE}, 1);
                 }
             }
         });
     }
 
     public void AbsensiPulang(){
-        Intent intent = new Intent(this, AbsensiPulang.class);
+        Intent intent = new Intent(this, AbsensiPulangActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
@@ -160,25 +163,25 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_absenmasuk:
-                Intent intent = new Intent(AbsensiKerja.this, VerAbsensiMasuk.class);
+                Intent intent = new Intent(AbsensiKerjaActivity.this, VerAbsensiMasuk.class);
                 startActivity(intent);
                 break;
             case R.id.nav_absenkerja:
                 break;
             case R.id.nav_absenpulang:
-                Intent intent2 = new Intent(AbsensiKerja.this, AbsensiPulang.class);
+                Intent intent2 = new Intent(AbsensiKerjaActivity.this, AbsensiPulangActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.nav_listpegawai:
-                Intent intent3 = new Intent(AbsensiKerja.this, ListPegawai.class);
+                Intent intent3 = new Intent(AbsensiKerjaActivity.this, ListPegawaiActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_profile:
-                Intent intent4 = new Intent(AbsensiKerja.this, ProfileActivity.class);
+                Intent intent4 = new Intent(AbsensiKerjaActivity.this, ProfileActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.nav_setting:
-                Intent intent5 = new Intent(AbsensiKerja.this, ChangePasswordActivity.class);
+                Intent intent5 = new Intent(AbsensiKerjaActivity.this, ChangePasswordActivity.class);
                 startActivity(intent5);
                 break;
             case R.id.nav_off:
@@ -196,18 +199,18 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
             public void onGetResponse(PostResponse response) {
                 if (response.getStatus() == true) {
                     VerAbsensiKerja();
-                    new KAlertDialog(AbsensiKerja.this, KAlertDialog.SUCCESS_TYPE)
+                    new KAlertDialog(AbsensiKerjaActivity.this, KAlertDialog.SUCCESS_TYPE)
                             .setTitleText("Berhasil!")
                             .setContentText(response.getMessage())
                             .show();
                 } else {
-                    Toast.makeText(AbsensiKerja.this, response.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AbsensiKerjaActivity.this, response.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onGetError() {
-                new KAlertDialog(AbsensiKerja.this, KAlertDialog.ERROR_TYPE)
+                new KAlertDialog(AbsensiKerjaActivity.this, KAlertDialog.ERROR_TYPE)
                         .setTitleText("Gagal!")
                         .setContentText("Tidak Terhubung ke server.")
                         .show();
@@ -229,6 +232,6 @@ public class AbsensiKerja extends AppCompatActivity implements NavigationView.On
         String keluar = "Anda telah keluar";
         intent6.putExtra("user_logout", keluar);
         startActivity(intent6);
-        Toast.makeText(AbsensiKerja.this, "Anda telah keluar", Toast.LENGTH_SHORT).show();
+        Toast.makeText(AbsensiKerjaActivity.this, "Anda telah keluar", Toast.LENGTH_SHORT).show();
     }
 }

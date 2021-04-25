@@ -1,8 +1,14 @@
-package com.example.absensipegawai;
+package com.example.absensipegawai.webservice;
 
 import android.util.Log;
 
 import com.example.absensipegawai.pojo.ListPegawaiResponse;
+import com.example.absensipegawai.pojo.LoginResponse;
+import com.example.absensipegawai.pojo.PostResponse;
+import com.example.absensipegawai.pojo.ProfileResponse;
+import com.example.absensipegawai.pojo.UpdatePasswordResponse;
+import com.example.absensipegawai.pojo.UpdateUserResponse;
+import com.example.absensipegawai.webservice.client.UnsafeOkHttpClient;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
