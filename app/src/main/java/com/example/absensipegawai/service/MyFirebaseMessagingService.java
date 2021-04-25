@@ -28,6 +28,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
             handleNow(remoteMessage.getData().get("token_absen"));
+            sendNotification(remoteMessage.getData().get("custom_notif"));
         }
 
         if (remoteMessage.getNotification() != null) {
@@ -63,7 +64,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
-//                        .setSmallIcon(R.drawable.ic_stat_ic_notification)
+                        .setSmallIcon(R.drawable.notification_icon)
                         .setContentTitle("Absensi Pegawai")
                         .setContentText(messageBody)
                         .setAutoCancel(true)
