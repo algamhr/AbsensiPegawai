@@ -7,11 +7,11 @@ Panduan Instalasi
 
 1. Download via zip di github.
 2. Folder REST letakkan pada server File Manager. Contoh
-
-AbsensiPegawai/REST/
+    
+    AbsensiPegawai/REST/
 
 3. File job.php letakkan pada server File Manager. Contoh
 
-AbsensiPegawai/job.php
+    AbsensiPegawai/job.php
 
 4. File database di upload di dalam mysql.
